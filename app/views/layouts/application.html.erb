@@ -9,6 +9,27 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="brand-logo right">Tech University</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li>
+              <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+              <%= link_to 'About', about_path %>
+            </li>
+            <li>
+              <%= link_to 'New course', courses_new_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
