@@ -1,8 +1,16 @@
 <header>
   <ul id="dropdown1" class="dropdown-content">
+    <% if logged_in? %>
+      <li><%= link_to "View your profile", student_path(current_user) %></li>
+      <li class="divider"></li>
+    <% end %>
     <li><%= session_link %></li>
   </ul>
   <ul id="dropdown2" class="dropdown-content">
+    <% if logged_in? %>
+      <li><%= link_to "View your profile", student_path(current_user) %></li>
+      <li class="divider"></li>
+    <% end %>
     <li><%= session_link %></li>
   </ul>
   <nav>
@@ -11,6 +19,11 @@
         <%= link_to "Tech University", root_path, class: "brand-logo right" %>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <% if logged_in? %>
+            <li>
+              <strong>Hi, <%= current_user.name %>!</strong>
+            </li>
+          <% end %>
           <li>
             <%= link_to "Courses", root_path %>
           </li>
@@ -24,6 +37,11 @@
           </li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
+          <% if logged_in? %>
+            <li>
+              <strong>Hi, <%= current_user.name %>!</strong>
+            </li>
+          <% end %>
           <li>
             <%= link_to "Courses", root_path %>
           </li>
